@@ -12,12 +12,18 @@ export class EditUserModal extends Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.state = {
+          userId: "",
+          firstName: "",
+        }
     }
 
     
 
     componentDidMount(){
-      }
+
+    }
 
     handleSubmit(event){
         event.preventDefault();
@@ -51,6 +57,7 @@ export class EditUserModal extends Component{
 
     render(){
       
+
         return(
           
             <Modal
@@ -72,27 +79,27 @@ export class EditUserModal extends Component{
 
                           <Form.Group controlId="Id">
                                 <Form.Label>User ID</Form.Label>
-                                <Form.Control name="Id" disabled defaultValue = {this.props.userid} type="text" placeholder="Id" />
+                                <Form.Control name="Id" disabled defaultValue = {this.props.userId} type="text" placeholder="Id" />
                               </Form.Group>
                               <Form.Group controlId="firstName">
                                 <Form.Label>First Name</Form.Label>
-                                <Form.Control name="firstName" required  type="text" defaultValue = {this.props.firstname} placeholder="First Name" />
+                                <Form.Control name="firstName" required  type="text" defaultValue = {this.props.firstName} placeholder="First Name" />
                               </Form.Group>
                               <Form.Group controlId="lastName">
                                 <Form.Label>Last Name</Form.Label>
-                                <Form.Control name="lastName" required type="text" defaultValue = {this.props.lastname} placeholder="Last Name"  />
+                                <Form.Control name="lastName" required type="text" defaultValue = {this.props.lastName} placeholder="Last Name"  />
                               </Form.Group>
                               <Form.Group controlId="Email">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control name="Email" required type="email" defaultValue = {this.props.useremail} placeholder="Email e.g. name@example.com" />
+                                <Form.Control name="Email" required type="email" defaultValue = {this.props.Email} placeholder="Email e.g. name@example.com" />
                               </Form.Group>
                               <Form.Group controlId="mobileNumber">
                                 <Form.Label>Mobile Number</Form.Label>
-                                <Form.Control name="mobileNumber" required type="text" defaultValue = {this.props.mobilenumber} placeholder="Mobile e.g. 0723218223 or +447236475886" />
+                                <Form.Control name="mobileNumber" required type="text" defaultValue = {this.props.mobileNumber} placeholder="Mobile e.g. 0723218223 or +447236475886" />
                               </Form.Group>
                               <Form.Group controlId="dateOfBirth">
                                 <Form.Label>Date of Birth</Form.Label>
-                                <Form.Control name="dateOfBirth" required type="date" defaultValue = {moment(new Date(this.props.dateofbirth)).format('YYYY-MM-DD')} placeholder="Date of Birth e.g. 05-02-97" />
+                                <Form.Control name="dateOfBirth" required type="date" defaultValue = {moment(new Date(this.props.dateOfBirth)).format('YYYY-MM-DD')} placeholder="Date of Birth e.g. 05-02-97" />
                               </Form.Group>
                             <Form.Group>
                                 <Button variant="primary" type="submit">Edit User</Button>
@@ -111,5 +118,3 @@ export class EditUserModal extends Component{
         )
     }
 }
-
-export default EditUserModal;
